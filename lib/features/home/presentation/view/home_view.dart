@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:news_app/core/functions/dimentions.dart';
 
 class HomeView extends StatelessWidget {
@@ -45,64 +44,63 @@ class HomeView extends StatelessWidget {
                 ),
               ),
             ),
-            SliverToBoxAdapter(
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/news1.jpg',
-                    height: getHeight(context) / 5,
-                    width: getWidth(context) / 2,
-                  ),
-                ],
-              ),
-            ),
             SliverToBoxAdapter(child: SizedBox(height: 20)),
             SliverToBoxAdapter(
               child: SizedBox(
-                height: getHeight(context) / 2.9,
+                height: getHeight(context) / 2.7,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Card(
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Text(
-                              'The first title of the news',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Image(
-                              image: AssetImage('assets/images/news1.jpg'),
-                              height: getHeight(context) / 6,
-                            ),
-                            Text(
-                              'The second title of the news',
-                              style: TextStyle(fontSize: 12),
-                            ),
-                            SizedBox(height: 10),
-                            Align(
-                              alignment: Alignment.bottomRight,
-                              child: Container(
-                                padding: const EdgeInsets.all(12),
-                                decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(8),
-                                  shape: BoxShape.rectangle,
-                                ),
-                                child: Icon(
-                                  Icons.arrow_forward_ios,
-                                  size: 15,
-                                  color: Colors.black,
+                    child: SizedBox(
+                      width: getWidth(context) * .75,
+                      child: Card(
+                        elevation: 5,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'The first title of the news',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ),
-                          ],
+                              const SizedBox(height: 10),
+                              Image.asset(
+                                'assets/images/news1.jpg',
+                                height: getHeight(context) / 6,
+                                width: double.infinity,
+                                fit: BoxFit.cover,
+                              ),
+                              const SizedBox(height: 10),
+                              const Text(
+                                'The second title of the news',
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                              const Spacer(),
+                              Align(
+                                alignment: Alignment.bottomRight,
+                                child: Container(
+                                  padding: const EdgeInsets.all(12),
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue,
+                                    borderRadius: BorderRadius.circular(8),
+                                  ),
+                                  child: const Icon(
+                                    Icons.arrow_forward_ios,
+                                    size: 15,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ),

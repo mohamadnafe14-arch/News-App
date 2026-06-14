@@ -10,49 +10,59 @@ class OnboardingBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image(
-          image: const AssetImage('assets/images/onboard.jpg'),
-          width: getWidth(context),
-          height: getHeight(context) / 1.9,
+        Image.asset(
+          'assets/images/onboard.jpg',
+          width: double.infinity,
+          height: getHeight(context) * 0.65,
           fit: BoxFit.cover,
         ),
-        Container(
-          margin: EdgeInsets.only(top: getHeight(context) / 1.7),
-          height: getHeight(context) / 2,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(30),
-              topRight: Radius.circular(30),
+
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Container(
+            height: getHeight(context) * 0.4,
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 24),
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(30),
+                topRight: Radius.circular(30),
+              ),
             ),
-          ),
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              const Text(
-                'Get the latest news from all over the world',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 25,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  'Get the latest news from all over the world',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
-              ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                onPressed: () {
-                  GoRouter.of(context).push(AppRouter.homeRoute);
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
-                  minimumSize: const Size(250, 50),
+                const SizedBox(height: 16),
+                const Text(
+                  'Stay informed with breaking news and updates anytime, anywhere.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 16, color: Colors.grey),
                 ),
-                child: const Text(
-                  'Get Started',
-                  style: TextStyle(color: Colors.white),
+                const SizedBox(height: 30),
+                SizedBox(
+                  width: 250,
+                  height: 50,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      context.go(AppRouter.homeRoute);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                    ),
+                    child: const Text(
+                      'Get Started',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ],
