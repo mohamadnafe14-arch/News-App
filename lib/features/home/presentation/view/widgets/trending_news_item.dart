@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:news_app/core/functions/dimentions.dart';
 import 'package:news_app/features/home/data/models/news_article.dart';
 
 class TrendingNewsItem extends StatelessWidget {
@@ -23,8 +22,8 @@ class TrendingNewsItem extends StatelessWidget {
                 width: 120,
                 height: 120,
                 fit: BoxFit.cover,
-                errorWidget: (_, __, ___) =>
-                    const Icon(Icons.image_not_supported),
+                errorWidget: (_, _, _) => const Icon(Icons.image_not_supported),
+                placeholder: (context, url) => const Icon(Icons.image),
               ),
             ),
             const SizedBox(width: 12),

@@ -11,7 +11,7 @@ class ApiService {
     try {
       final response = await dio.get(url);
       log(response.data.toString());
-      return response.data as Map<String, dynamic>;
+      return response.data;
     } on DioException catch (e) {
       switch (e.type) {
         case DioExceptionType.connectionTimeout:

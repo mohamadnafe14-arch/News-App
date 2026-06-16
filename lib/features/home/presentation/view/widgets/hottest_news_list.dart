@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:news_app/core/widgets/error_body.dart';
 import 'package:news_app/features/home/presentation/view/widgets/hottest_news_item.dart';
 import 'package:news_app/features/home/presentation/view/widgets/hottest_news_list_shimmer.dart';
-import 'package:news_app/features/home/presentation/viewmodel/cubit/hottest_news_cubit.dart';
+import 'package:news_app/features/home/presentation/viewmodel/hottest_news_cubit/hottest_news_cubit.dart';
 
 class HottestNewsList extends StatelessWidget {
   const HottestNewsList({super.key});

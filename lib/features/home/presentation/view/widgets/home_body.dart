@@ -6,8 +6,8 @@ import 'package:news_app/features/home/data/models/news_article.dart';
 import 'package:news_app/features/home/data/repos/home_repo.dart';
 import 'package:news_app/features/home/presentation/view/widgets/categories_list.dart';
 import 'package:news_app/features/home/presentation/view/widgets/hottest_news_list.dart';
-import 'package:news_app/features/home/presentation/view/widgets/trending_news_item.dart';
-import 'package:news_app/features/home/presentation/viewmodel/cubit/hottest_news_cubit.dart';
+import 'package:news_app/features/home/presentation/view/widgets/news_category_item.dart';
+import 'package:news_app/features/home/presentation/viewmodel/hottest_news_cubit/hottest_news_cubit.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
@@ -51,8 +51,8 @@ class HomeBody extends StatelessWidget {
             ),
           ),
           SliverToBoxAdapter(
-            child: TrendingNewsItem(
-              newsArticle: NewsArticle(
+            child: NewsCategoryItem(
+              article: NewsArticle(
                 source: Source(id: 'bbc-news', name: 'BBC News'),
                 author: 'John Smith',
                 title:
