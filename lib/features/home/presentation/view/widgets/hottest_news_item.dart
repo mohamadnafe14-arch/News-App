@@ -28,8 +28,9 @@ class HottestNewsItem extends StatelessWidget {
                     fit: BoxFit.cover,
                     errorWidget: (context, url, error) =>
                         const Icon(Icons.error, color: Colors.red),
-                    placeholder: (context, url) =>
-                        const Center(child: CircularProgressIndicator()),
+                    placeholder: (context, url) => const Center(
+                      child: Icon(Icons.image, color: Colors.grey),
+                    ),
                   ),
                 ),
                 Text(
